@@ -2,9 +2,7 @@
 # additional groups are for more control of the environment.
 [control]
 # These hostname must be resolvable from your deployment host
-control01
-control02
-control03
+wally194.cit.tu-berlin.de
 
 # The above can also be specified as follows:
 #control[01:03]     ansible_user=kolla
@@ -14,9 +12,6 @@ control03
 [network:children]
 control
 
-[compute]
-compute01
-
 [monitoring:children]
 control
 
@@ -24,6 +19,11 @@ control
 # you need to comment out "api_interface" and other interfaces from the globals.yml
 # and specify like below:
 #compute01 neutron_external_interface=eth0 api_interface=em1 storage_interface=em1 tunnel_interface=em1
+
+[compute]
+wally195.cit.tu-berlin.de
+wally196.cit.tu-berlin.de
+wally197.cit.tu-berlin.de
 
 [storage:children]
 compute
