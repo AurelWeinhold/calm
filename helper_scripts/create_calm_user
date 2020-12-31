@@ -1,8 +1,11 @@
+#!/usr/bin/env bash
+
+
 # create user calm
-sudo addusr -s /bin/bash -d /home/calm -m -G sudo calm
+[ sudo useradd -s /bin/bash -d /home/calm -m -G sudo calm ] || exit 1
 
 # change to user calm
-sudo su calm
+[ sudo su calm ] || exit 1
 
 # change its password
 echo admin | passwd --stdin
