@@ -1,14 +1,16 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
+# User calm gets created with password admin.
+
+# ATTENTION: This is obviously super insecure! Make sure to disable login by
+# password if you ever use this script on any server that's online.
 
 # create user calm
-[ sudo useradd -s /bin/bash -d /home/calm -m -G sudo calm ] || exit 1
-
-# change to user calm
-[ sudo su calm ] || exit 1
+sudo useradd -s /bin/bash -d /home/calm -m -G sudo calm || exit 1
 
 # change its password
-echo admin | passwd --stdin
+echo "calm:admin" | sudo chpasswd 
 
 # generate a new ssh key-pair
-ssh-keygen
+# command is executed as calm user with $HOME set to calm's home directory
+sudo -H -u calm ssh-keygen
