@@ -2,7 +2,8 @@
 # additional groups are for more control of the environment.
 [control]
 # These hostname must be resolvable from your deployment host
-wally194.cit.tu-berlin.de
+#wally194.cit.tu-berlin.de
+localhost
 
 # The above can also be specified as follows:
 #control[01:03]     ansible_user=kolla
