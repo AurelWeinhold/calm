@@ -1,0 +1,11 @@
+# create user calm
+sudo addusr -s /bin/bash -d /home/calm -m -G sudo calm
+
+# change to user calm
+sudo su calm
+
+# change its password
+echo admin | passwd --stdin
+
+# generate a new ssh key-pair
+ssh-keygen
