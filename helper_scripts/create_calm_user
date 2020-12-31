@@ -14,3 +14,6 @@ echo "calm:admin" | sudo chpasswd
 # generate a new ssh key-pair
 # command is executed as calm user with $HOME set to calm's home directory
 sudo -H -u calm ssh-keygen
+
+# copy public key to controller at wally194.cit.tu-berlin.de
+sudo -H -u calm ssh-copy-id -i $HOME/.ssh/id_rsa.pub calm@wally194.cit.tu-berlin.de
