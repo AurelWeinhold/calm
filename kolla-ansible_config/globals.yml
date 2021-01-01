@@ -97,7 +97,7 @@ docker_client_timeout: 120
 # Yet another way to workaround the naming problem is to create a bond for the
 # interface on all hosts and give the bond name here. Similar strategy can be
 # followed for other types of interfaces.
-network_interface: "enps2s0"
+network_interface: "enp2s0"
 
 # These can be adjusted for even more customization. The default is the same as
 # the 'network_interface'. These interfaces must contain an IP address.
