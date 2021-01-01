@@ -15,7 +15,7 @@ config_strategy: "COPY_ALWAYS"
 kolla_base_distro: "ubuntu"
 
 # Valid options are [ binary, source ]
-kolla_install_type: "binary"
+kolla_install_type: "source"
 
 # Do not override this unless you know what you are doing.
 #openstack_release: "ussuri"
