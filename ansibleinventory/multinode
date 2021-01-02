@@ -3,7 +3,7 @@
 [control]
 # These hostname must be resolvable from your deployment host
 #wally194.cit.tu-berlin.de
-localhost
+localhost ansible_user=calm become=true ansible_become_password=admin
 
 # The above can also be specified as follows:
 #control[01:03]     ansible_user=kolla
@@ -22,9 +22,9 @@ control
 #compute01 neutron_external_interface=eth0 api_interface=em1 storage_interface=em1 tunnel_interface=em1
 
 [compute]
-wally195.cit.tu-berlin.de become=true ansible_become_password=admin
-wally196.cit.tu-berlin.de become=true ansible_become_password=admin
-wally197.cit.tu-berlin.de become=true ansible_become_password=admin
+wally195.cit.tu-berlin.de ansible_user=calm become=true ansible_become_password=admin
+wally196.cit.tu-berlin.de ansible_user=calm become=true ansible_become_password=admin
+wally197.cit.tu-berlin.de ansible_user=calm become=true ansible_become_password=admin
 
 [storage:children]
 compute
