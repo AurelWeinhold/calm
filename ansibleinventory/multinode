@@ -22,9 +22,9 @@ control
 #compute01 neutron_external_interface=eth0 api_interface=em1 storage_interface=em1 tunnel_interface=em1
 
 [compute]
-wally195.cit.tu-berlin.de
-wally196.cit.tu-berlin.de
-wally197.cit.tu-berlin.de
+wally195.cit.tu-berlin.de become=true ansible_become_password=admin
+wally196.cit.tu-berlin.de become=true ansible_become_password=admin
+wally197.cit.tu-berlin.de become=true ansible_become_password=admin
 
 [storage:children]
 compute
