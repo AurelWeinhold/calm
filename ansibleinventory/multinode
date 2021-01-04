@@ -22,9 +22,9 @@ control
 #compute01 neutron_external_interface=eth0 api_interface=em1 storage_interface=em1 tunnel_interface=em1
 
 [compute]
-wally195.cit.tu-berlin.de ansible_user=calm become=true ansible_become_password=admin
-wally196.cit.tu-berlin.de ansible_user=calm become=true ansible_become_password=admin
-wally197.cit.tu-berlin.de ansible_user=calm become=true ansible_become_password=admin
+wally195.cit.tu-berlin.de
+wally196.cit.tu-berlin.de
+wally197.cit.tu-berlin.de
 
 [storage:children]
 compute
@@ -38,6 +38,13 @@ network
 compute
 storage
 monitoring
+
+[baremetal:vars]
+remote_user=calm
+ansible_ssh_private_key_file=/home/calm/.ssh/id_rsa
+ansible_user=calm 
+become=true 
+ansible_become_password=admin
 
 [tls-backend:children]
 control
