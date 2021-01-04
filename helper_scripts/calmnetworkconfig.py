@@ -28,7 +28,7 @@ if(args.verbose):
 
 #command to get interfaces and MAC address
 cmd_ip_link = ['ip', '-o', 'link'] #get all interface data
-cmd_awk = ['awk', '$2 != "lo:" && $2 != "docker:" {print $2, $(NF-2)}'] # remove all unneccassary information and filter loopback and docker interfaces
+cmd_awk = ['awk', '$2 != "lo:" && $2 != "docker:" && $2 !~ /docker.:/ {print $2, $(NF-2)}'] # remove all unneccassary information and filter loopback and docker interfaces
 proc_ip_link = subprocess.Popen(cmd_ip_link, stdout=subprocess.PIPE) #pipe output into second command
 proc_awk = subprocess.Popen(cmd_awk, stdin=proc_ip_link.stdout, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 proc_ip_link.stdout.close() #close first process
