@@ -16,4 +16,4 @@ echo "calm:admin" | sudo chpasswd
 sudo -H -u calm ssh-keygen
 
 # copy public key to controller at wally194.cit.tu-berlin.de
-sudo -H -u calm ssh-copy-id -i "/home/calm/.ssh/id_rsa.pub" calm@wally194.cit.tu-berlin.de
+ssh-copy-id -i "/home/calm/.ssh/id_rsa.pub" calm@wally194.cit.tu-berlin.de
