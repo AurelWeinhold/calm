@@ -1,0 +1,26 @@
+---
+# This playbook prepares the servers for the bootstrap
+
+
+- name: Setup to bootstrap
+  hosts: compute
+
+  tasks:
+      - name: Install apt dependencies
+        apt:
+            update_cache: yes
+            pkg:
+                - python3
+                - python3-pip
+                - python3-dev
+                - libffi-dev
+                - gcc
+                - libssl-dev
+
+                - name: Install pip dependencies
+                  pip:
+                      virtualenv: /opt/calm/calmenv
+                      name:
+                          - docker
+                          - docker-py
+
