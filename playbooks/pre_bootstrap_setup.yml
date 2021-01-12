@@ -4,6 +4,7 @@
 
 - name: Setup to bootstrap
   hosts: compute
+  become: yes
 
   tasks:
       - name: Install apt dependencies
@@ -17,10 +18,13 @@
                 - gcc
                 - libssl-dev
 
-                - name: Install pip dependencies
-                  pip:
-                      virtualenv: /opt/calm/calmenv
-                      name:
-                          - docker
-                          - docker-py
+      - name: Uninstall docker-py
+        pip:
+            virtualenv: /home/calm/calmenv
+            name: docker-py
+            state: absent
 
+      - name: Install pip dependencies
+        pip:
+            virtualenv: /home/calm/calmenv
+            name: docker
