@@ -4,10 +4,11 @@
 
 - name: Setup to bootstrap
   hosts: baremetal
-  become: yes
+  
 
   tasks:
       - name: Install apt dependencies
+        become: yes
         apt:
             update_cache: yes
             pkg:
@@ -22,7 +23,6 @@
         pip:
             name: docker-py
             state: absent
-            state: latest
 
       - name: Install pip dependencies
         pip:
