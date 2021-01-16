@@ -7,6 +7,12 @@
   
 
   tasks:
+      - name: Uninstall old virtual env
+        become: yes
+        file:
+          state: absent
+          path: /opt/calm/calmenv
+      
       - name: Install apt dependencies
         become: yes
         apt:
