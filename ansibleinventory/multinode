@@ -40,7 +40,7 @@ monitoring
 
 [baremetal:vars]
 remote_user=kolla
-ansible_python_interpreter=/opt/calm/calmenv/bin/python
+ansible_python_interpreter=/opt/calm/calmenv/bin/python3
 virtualenv=/opt/calm/calmenv
 
 [tls-backend:children]
