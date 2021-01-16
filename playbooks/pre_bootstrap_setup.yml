@@ -22,7 +22,6 @@
         pip:
             name: docker-py
             state: absent
-            state: latest
 
       - name: Install pip dependencies
         pip:
