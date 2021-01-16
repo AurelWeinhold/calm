@@ -29,7 +29,7 @@ wally197.cit.tu-berlin.de
 compute
 
 [deployment]
-localhost       ansible_connection=local
+localhost       ansible_connection=local ansible_python_interpreter=/usr/bin/python
 
 [baremetal:children]
 control
@@ -40,6 +40,8 @@ monitoring
 
 [baremetal:vars]
 remote_user=kolla
+ansible_python_interpreter=/opt/calm/calmenv/bin/python
+virtualenv=/opt/calm/calmenv
 
 [tls-backend:children]
 control
