@@ -67,7 +67,7 @@ virtualenv: /opt/calm/calmenv
 # docker_registry_password is set in the passwords.yml file.
 
 # Namespace of images:
-docker_namespace: "kolla"
+docker_namespace: "calm"
 
 # Docker client timeout in seconds.
 docker_client_timeout: 120

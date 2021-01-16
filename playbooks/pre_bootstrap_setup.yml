@@ -3,7 +3,7 @@
 
 
 - name: Setup to bootstrap
-  hosts: compute
+  hosts: baremetal
   become: yes
 
   tasks:
@@ -20,11 +20,9 @@
 
       - name: Uninstall docker-py
         pip:
-            virtualenv: /home/calm/calmenv
             name: docker-py
             state: absent
 
       - name: Install pip dependencies
         pip:
-            virtualenv: /home/calm/calmenv
             name: docker
