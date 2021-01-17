@@ -29,7 +29,7 @@ wally197.cit.tu-berlin.de
 compute
 
 [deployment]
-localhost       ansible_connection=local ansible_python_interpreter=/usr/bin/python
+#localhost       ansible_connection=local ansible_python_interpreter=/usr/bin/python3
 
 [baremetal:children]
 control
