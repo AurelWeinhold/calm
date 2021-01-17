@@ -2,8 +2,7 @@
 # additional groups are for more control of the environment.
 [control]
 # These hostname must be resolvable from your deployment host
-#wally194.cit.tu-berlin.de
-localhost
+wally194.cit.tu-berlin.de
 
 # The above can also be specified as follows:
 #control[01:03]     ansible_user=kolla
@@ -30,7 +29,7 @@ wally197.cit.tu-berlin.de
 compute
 
 [deployment]
-localhost       ansible_connection=local
+localhost       ansible_connection=local ansible_python_interpreter=/usr/bin/python
 
 [baremetal:children]
 control
@@ -40,11 +39,9 @@ storage
 monitoring
 
 [baremetal:vars]
-remote_user=calm
-ansible_ssh_private_key_file=/home/calm/.ssh/id_rsa
-ansible_user=calm 
-become=true 
-ansible_become_password=admin
+remote_user=kolla
+ansible_python_interpreter=/opt/calm/calmenv/bin/python3
+virtualenv=/opt/calm/calmenv
 
 [tls-backend:children]
 control
