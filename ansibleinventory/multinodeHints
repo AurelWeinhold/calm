@@ -29,7 +29,7 @@ wally197.cit.tu-berlin.de
 compute
 
 [deployment]
-localhost       ansible_connection=local ansible_python_interpreter=/usr/bin/python
+#localhost       ansible_connection=local ansible_python_interpreter=/usr/bin/python
 
 [baremetal:children]
 control
@@ -38,10 +38,11 @@ compute
 storage
 monitoring
 
-[baremetal:vars]
-remote_user=kolla
-ansible_python_interpreter=/opt/calm/calmenv/bin/python3
-virtualenv=/opt/calm/calmenv
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=chris
+ansible_become=True
+ansible_private_key_file={{lookup('env','HOME')}}/.ssh/id_rsa
 
 [tls-backend:children]
 control
