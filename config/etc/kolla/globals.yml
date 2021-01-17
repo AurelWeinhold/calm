@@ -34,7 +34,7 @@ openstack_release: "train"
 # All-In-One without haproxy and keepalived, you can set enable_haproxy to no
 # in "OpenStack options" section, and set this value to the IP of your
 # 'network_interface' as set in the Networking section below.
-kolla_internal_vip_address: "130.149.249.191"
+kolla_internal_vip_address: "130.149.249.204"
 
 # This is the DNS name that maps to the kolla_internal_vip_address VIP. By
 # default it is the same as kolla_internal_vip_address.
@@ -63,10 +63,10 @@ kolla_internal_vip_address: "130.149.249.191"
 # docker_registry_password is set in the passwords.yml file.
 
 # Namespace of images:
-docker_namespace: "calm"
+# docker_namespace: "kolla"
 
 # Docker client timeout in seconds.
-docker_client_timeout: 120
+# docker_client_timeout: 120
 
 #docker_configure_for_zun: "no"
 #containerd_configure_for_zun: "no"
