@@ -4,15 +4,8 @@
 
 - name: Setup to bootstrap
   hosts: baremetal
-  
 
   tasks:
-      - name: Uninstall old virtual env
-        become: yes
-        file:
-          state: absent
-          path: /opt/calm/calmenv
-      
       - name: Install apt dependencies
         become: yes
         apt:
@@ -24,6 +17,12 @@
                 - libffi-dev
                 - gcc
                 - libssl-dev
+
+      - name: Create python virtual environment
+        become: yes
+        command:
+            cmd: /usr/bin/python3 -m venv /opt/calm/calmenv
+            creates: "/opt/calm/calmenv"
 
       - name: Uninstall docker-py
         pip:
