@@ -1,0 +1,10 @@
+---
+
+- name: Restart docker service
+  hosts: baremetal
+
+  tasks:
+      - name: Restart docker service
+        become: yes
+        command:
+            cmd: systemctl restart docker
