@@ -12,8 +12,8 @@ wally194.cit.tu-berlin.de
 [network:children]
 control
 
-[monitoring:children]
-control
+[monitoring]
+wally195.cit.tu-berlin.de
 
 # When compute nodes and control nodes use different interfaces,
 # you need to comment out "api_interface" and other interfaces from the globals.yml
@@ -21,7 +21,6 @@ control
 #compute01 neutron_external_interface=eth0 api_interface=em1 storage_interface=em1 tunnel_interface=em1
 
 [compute]
-wally195.cit.tu-berlin.de
 wally196.cit.tu-berlin.de
 wally197.cit.tu-berlin.de
 
