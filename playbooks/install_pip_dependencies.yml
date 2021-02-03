@@ -18,4 +18,4 @@
         pip:
             virtualenv: /opt/calm/calmenv
             name: docker
-            state: latest
+            version: 2.7.0
