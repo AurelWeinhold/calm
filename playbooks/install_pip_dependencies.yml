@@ -1,0 +1,21 @@
+---
+# This playbook prepares the servers for the bootstrap
+
+
+- name: Setup to bootstrap
+  hosts: baremetal
+
+  tasks:
+      - name: Uninstall docker-py
+        become: yes
+        pip:
+            virtualenv: /opt/calm/calmenv
+            name: docker-py
+            state: absent
+
+      - name: Install pip dependencies
+        become: yes
+        pip:
+            virtualenv: /opt/calm/calmenv
+            name: docker
+            state: latest

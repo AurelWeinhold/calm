@@ -1,0 +1,13 @@
+---
+# This playbook prepares the servers for the bootstrap
+
+
+- name: Create the python virtualenv
+  hosts: baremetal
+
+  tasks:
+      - name: Create python virtual environment
+        become: yes
+        command:
+            cmd: /usr/bin/python3 -m venv /opt/calm/calmenv
+            creates: "/opt/calm/calmenv"
