@@ -1,0 +1,18 @@
+---
+# This playbook prepares the servers for the bootstrap
+
+- name: Install apt dependencies
+  hosts: baremetal
+
+  task:
+      - name: Install apt dependencies
+        become: yes
+        apt:
+            update_cache: yes
+            pkg:
+                - python3
+                - python3-pip
+                - python3-dev
+                - libffi-dev
+                - gcc
+                - libssl-dev
