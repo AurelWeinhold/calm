@@ -1,0 +1,31 @@
+---
+
+- name: Upgrade docker version
+  hosts: baremetal
+
+  tasks:
+      - name: Deinstall docker
+        become: yes
+        pip:
+            name: docker
+            state: absent
+
+      - name: Deinstall docker-py
+        become: yes
+        pip:
+            virtualenv: /opt/calm/calmenv
+            name: docker-py
+            state: absent
+
+      - name: Remove docker folder
+        become: yes
+        file:
+            path: /var/lib/docker
+            state: absent
+
+      - name: Upgrade docker version
+        become: yes
+        pip:
+            virtualenv: /opt/calm/calmenv
+            name: docker
+            version: 2.7.0
